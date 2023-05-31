@@ -38,7 +38,7 @@ export class UsersController {
     @ApiResponse({status:200})
     @Roles("Admin")
     @UseGuards(RolesGuard)
-    @Get('/role')
+    @Post('/role')
     addRole(@Body() dto:AddRoleDto){
         return this.usersService.addRole(dto)
     }
@@ -47,7 +47,7 @@ export class UsersController {
     @ApiResponse({status:200})
     @Roles("Admin")
     @UseGuards(RolesGuard)
-    @Get('/ban')
+    @Post('/ban')
     ban(@Body() dto:BanUserDto){
         return this.usersService.ban(dto)
     }
